@@ -177,14 +177,17 @@ from collections import deque
 
 def solution(progresses, speeds):
     answer = []
-    progresses = deque(progresses)
+    progresses = deque(progresses)  # 큐 구현을 위해 deque를 사용
     speeds = deque(speeds)
+    print(progresses)
+    print(speeds)
 
     while progresses:
         progresses = deque([x + y for x, y in zip(progresses, speeds)])
-        if progresses[0] >= 100:
+        print(progresses)
+        if progresses[0] >= 100: # 첫번째 일이 100이상 일때 시작
             complete = 0
-            for i in progresses:
+            for i in progresses: # 반복을 돌려서 100이상 연속이 된것만 complete에 기록
                 if i >= 100:
                     complete += 1
                 else:
@@ -192,7 +195,7 @@ def solution(progresses, speeds):
             answer.append(complete)
 
             for i in range(complete):
-                progresses.popleft()
+                progresses.popleft() # FIFO 구현
                 speeds.popleft()
 
     return answer
@@ -200,4 +203,4 @@ def solution(progresses, speeds):
 if __name__ == '__main__':
     progresses = [93, 30, 55]
     speeds = [1, 30, 5]
-    print(solution(progresses, speeds))
+    print('정답 :',solution(progresses, speeds))
