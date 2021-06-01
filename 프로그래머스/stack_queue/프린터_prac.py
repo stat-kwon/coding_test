@@ -82,28 +82,28 @@ answer = 0
 
 ''' 3. index를 가지고 location이 들어갔을때 return값 구현하기'''
 
-priorities = [1, 1, 9, 1, 1, 1]
-location = 0
-index = [i for i in range(len(priorities))]
-prior_inx = list(zip(priorities,index))
-
-queue = deque(prior_inx)
-
-answer = 0
-loc = 0
-while queue:
-    a = queue.popleft()
-    for i in queue:
-        if i[0] > a[0]:
-            queue.append(a)
-            break
-    else:
-        answer +=1
-        loc = a[1]
-        if loc == location:
-            break
-print(answer)
-
+# priorities = [1, 1, 9, 1, 1, 1]
+# location = 0
+# index = [i for i in range(len(priorities))]
+# prior_inx = list(zip(priorities,index))
+#
+# queue = deque(prior_inx)
+#
+# answer = 0
+# loc = 0
+# while queue:
+#     a = queue.popleft()
+#     for i in queue:
+#         if i[0] > a[0]:
+#             queue.append(a)
+#             break
+#     else:
+#         answer +=1
+#         loc = a[1]
+#         if loc == location:
+#             break
+# print(answer)
+#
 ''' 최종 '''
 from collections import deque
 def solution(priorities, location):
@@ -125,4 +125,3 @@ def solution(priorities, location):
             if loc == location:
                 break
     return answer
-

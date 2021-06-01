@@ -70,3 +70,25 @@ def solution(bridge_length, weight, truck_weights):
             else:
                 ing.append(0)
     return time
+
+
+a = [1,2,3]
+while len(a):
+    a.pop(0)
+    print(a)
+    print('계속돌아가는중')
+
+
+# a = [1,2,3]
+# while True:
+#     if len(a) != 0:
+#         a.pop()
+#         print(a)
+#     print('계속돌아가는중')
+
+a = [1,2,3]
+while a:
+    if a:
+        a.pop()
+        print(a)
+    print('계속돌아가는중')
