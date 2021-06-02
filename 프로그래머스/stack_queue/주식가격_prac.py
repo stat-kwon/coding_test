@@ -30,6 +30,9 @@ while prices:
     answer.append(cnt)
 print(answer)
 
+
+
+''' 최종 문제 정리 '''
 from collections import deque
 def solution(prices):
     answer = []
