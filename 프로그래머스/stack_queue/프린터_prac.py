@@ -31,21 +31,21 @@ priorities	location	return
 ''' 1. FIFO로 생각하게됨'''
 # 가장 먼저 들어 간게 조건에 안맞을 때 맨뒤에 append됨
 
-priorities = [2, 1, 3, 2]
-location = 2
-
-# def solution(priorities, location):
-#     answer = 0
-#     return answer
-
-from collections import deque
-queue = deque(priorities)
-print(queue)
+# priorities = [2, 1, 3, 2]
+# location = 2
+#
+# # def solution(priorities, location):
+# #     answer = 0
+# #     return answer
+#
+# from collections import deque
+# queue = deque(priorities)
+# print(queue)
 # print(sorted(priorities, reverse=True))
 # complete = deque(sorted(priorities, reverse=True))
-location = 2
-
-answer = 0
+# location = 2
+#
+# answer = 0
 # while True:
 #     k = queue.popleft()
 #
@@ -56,29 +56,31 @@ answer = 0
 # print(answer)
 
 ''' 2. 어느정도 구현은 했고 이때 index list를 만들어서 같이 관리 '''
-# priorities = [2, 1, 3, 2]
-# index = [i for i in range(len(priorities))]
-# print(index)
-# location = 2
-#
-# queue = deque(priorities)
-# print(queue)
-# a = queue.popleft()
-# print(queue)
-# queue.append(a)
-# print(queue)
-#
-# answer = 0
-# while queue:
-#     a = queue.popleft()
-#     for i in queue:
-#         if i > a:
-#             queue.append(a)
-#             break
-#         else:
-#             answer +=1
-#             break
-#     print("queue : ",queue,'answer: ',answer)
+
+from collections import deque
+priorities = [2, 1, 3, 2]
+index = [i for i in range(len(priorities))]
+print(index)
+location = 2
+
+queue = deque(priorities)
+print(queue)
+a = queue.popleft()
+print(queue)
+queue.append(a)
+print(queue)
+
+answer = 0
+while queue:
+    a = queue.popleft()
+    for i in queue:
+        if i > a:
+            queue.append(a)
+            break
+        else:
+            answer +=1
+            break
+    print("queue : ",queue,'answer: ',answer)
 
 ''' 3. index를 가지고 location이 들어갔을때 return값 구현하기'''
 
